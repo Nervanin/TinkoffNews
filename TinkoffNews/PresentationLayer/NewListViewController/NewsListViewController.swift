@@ -9,13 +9,20 @@
 import UIKit
 
 class NewsListViewController: UIViewController {
-
+    
+    var newsListView = NewsListView()
+    var parseDataNetwork = ParseDataNetwork()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-   
+        
+        parseDataNetwork.parseData()
+        newsListView = NewsListView(frame: view.frame)
+        
+        view.addSubview(newsListView)
         
     }
-
-
+    
+    
 }
 

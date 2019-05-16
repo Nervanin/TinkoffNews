@@ -12,10 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+       
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        let mainView = NewsListViewController()
+        let mainNavigationController = UINavigationController(rootViewController: mainView)
+        mainNavigationController.viewControllers = [mainView]
+        window?.rootViewController = mainNavigationController
+
         return true
     }
 
