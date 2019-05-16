@@ -12,11 +12,12 @@ class NewsListViewController: UIViewController {
     
     var newsListView = NewsListView()
     var parseDataNetwork = ParseDataNetwork()
+    var paginotation = Pagination()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        parseDataNetwork.parseData()
+        parseDataNetwork.getNews(pagination: paginotation)
         newsListView = NewsListView(frame: view.frame)
         
         view.addSubview(newsListView)

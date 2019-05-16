@@ -8,6 +8,33 @@
 
 import Foundation
 
+struct API: Codable {
+    var resultCode: String
+    var payload: [Payload]
+    var trackingId: String
+    
+}
+
+struct Payload: Codable {
+    var id: String
+    var name: String
+    var text: String
+    var publicationDate: [PublicationDate]
+    var bankInfoTypeId: Int
+}
+
+struct PublicationDate: Codable {
+    var milliseconds: Int
+}
+
+
+
+
+struct NewsList: Codable {
+    var response: Response
+}
+
+
 struct Response: Codable {
     var news: [News]
     var total: Int
@@ -29,6 +56,11 @@ struct News: Codable {
     var references: [References]
     var text: String
     var textshort: String
+    var disclaimer: String?
+    var desktopl: String?
+    var desktops: String?
+    var desktopl2x: String?
+    var desktops2x: String?
 }
 
 struct Parts: Codable {

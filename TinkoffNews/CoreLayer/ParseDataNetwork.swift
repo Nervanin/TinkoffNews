@@ -8,11 +8,16 @@
 
 import Foundation
 
+struct Pagination {
+    var first = 0
+    var last = 0
+}
+
 class ParseDataNetwork {
     
-    func parseData() {
-        let urlString = "https://cfg.tinkoff.ru/news/public/api/platform/v1/getArticles"
-        guard let url = URL(string: urlString) else {
+    func getNews(pagination: Pagination) {
+        let baseURLString = "https://cfg.tinkoff.ru/news/public/api/platform/v1/getArticles?pageSize=20&pageOffset=20"
+        guard let url = URL(string: baseURLString) else {
             return
         }
         let request = URLRequest(url: url)
@@ -23,10 +28,10 @@ class ParseDataNetwork {
                         return
                     }
                     let decoder = JSONDecoder()
-                    let response: Response = try decoder.decode(Response.self, from: data)
+                    let response: NewsList = try decoder.decode(NewsList.self, from: data)
                     print(response)
                 } catch {
-                    print("Error \(error)")
+                    print("Error: \(error)")
                 }
             }
         }
