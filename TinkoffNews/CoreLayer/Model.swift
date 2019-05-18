@@ -27,13 +27,9 @@ struct PublicationDate: Codable {
     var milliseconds: Int
 }
 
-
-
-
 struct NewsList: Codable {
-    var response: Response
+    var response: Response?
 }
-
 
 struct Response: Codable {
     var news: [News]

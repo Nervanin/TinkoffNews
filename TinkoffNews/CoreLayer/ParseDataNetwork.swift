@@ -8,14 +8,11 @@
 
 import Foundation
 
-struct Pagination {
-    var first = 0
-    var last = 0
-}
-
 class ParseDataNetwork {
     
-    func getNews(pagination: Pagination) {
+    static let shared: ParseDataNetwork = ParseDataNetwork()
+    
+    func getNews(completionHandler: @escaping (_ object: NewsList) -> Void) {
         let baseURLString = "https://cfg.tinkoff.ru/news/public/api/platform/v1/getArticles?pageSize=20&pageOffset=20"
         guard let url = URL(string: baseURLString) else {
             return
@@ -23,15 +20,20 @@ class ParseDataNetwork {
         let request = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let data = data {
-                do {
-                    guard (try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]) != nil else {
-                        return
+                DispatchQueue.main.async {
+                    
+                    
+                    do {
+                        guard (try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]) != nil else {
+                            return
+                        }
+                        let decoder = JSONDecoder()
+                        let response: NewsList = try decoder.decode(NewsList.self, from: data)
+                        completionHandler(response)
+                        // print(response)
+                    } catch {
+                        print("Error: \(error)")
                     }
-                    let decoder = JSONDecoder()
-                    let response: NewsList = try decoder.decode(NewsList.self, from: data)
-                    print(response)
-                } catch {
-                    print("Error: \(error)")
                 }
             }
         }

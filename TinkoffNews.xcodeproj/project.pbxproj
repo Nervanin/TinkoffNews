@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5333C03228FE1B5009844D4 /* NewsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5333C02228FE1B5009844D4 /* NewsListTableViewCell.swift */; };
 		B5B61858228C89420006A139 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B61857228C89420006A139 /* AppDelegate.swift */; };
 		B5B6185A228C89420006A139 /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B61859228C89420006A139 /* NewsListViewController.swift */; };
 		B5B6185F228C89450006A139 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5B6185E228C89450006A139 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B5333C02228FE1B5009844D4 /* NewsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewCell.swift; sourceTree = "<group>"; };
 		B5B61854228C89420006A139 /* TinkoffNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B61857228C89420006A139 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5B61859228C89420006A139 /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5333C01228FE188009844D4 /* Cell's */ = {
+			isa = PBXGroup;
+			children = (
+				B5333C02228FE1B5009844D4 /* NewsListTableViewCell.swift */,
+			);
+			path = "Cell's";
+			sourceTree = "<group>";
+		};
 		B5B6184B228C89410006A139 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				B5B61859228C89420006A139 /* NewsListViewController.swift */,
+				B5333C01228FE188009844D4 /* Cell's */,
 				B5B61871228CA0C50006A139 /* TVDataSourceDelegate */,
 				B5B61870228CA0AC0006A139 /* View */,
 			);
@@ -188,6 +199,7 @@
 			files = (
 				B5B6186C228C8E640006A139 /* TableViewDelegate.swift in Sources */,
 				B5B6186A228C8E590006A139 /* TableViewDataSource.swift in Sources */,
+				B5333C03228FE1B5009844D4 /* NewsListTableViewCell.swift in Sources */,
 				B5B61877228CB36A0006A139 /* Model.swift in Sources */,
 				B5B6186E228C92D60006A139 /* NewsListView.swift in Sources */,
 				B5B6185A228C89420006A139 /* NewsListViewController.swift in Sources */,

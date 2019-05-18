@@ -21,7 +21,7 @@ class NewsListView: UIView {
         
         self.addSubview(tableView)
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: tableViewDataSource.cellId)
+        tableView.register(NewsListTableViewCell.self, forCellReuseIdentifier: tableViewDataSource.cellId)
             
         self.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
     }
